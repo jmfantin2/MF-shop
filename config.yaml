@@ -1,0 +1,25 @@
+baseURL: 'https://www.meufuturo.shop/'
+languageCode: 'pt-br'
+title: 'Avante! ⟨ meufuturo.shop ⟩'
+enableRobotsTXT: true
+defaultContentLanguage: 'pt-br'
+module:
+  disable: true
+
+sitemap:
+  changefreq: 'weekly'
+  priority: 0.8
+
+params:
+  logo: 'images/logo-mfs.png'
+  button_texto: 'Placeholder'
+  cta_link: 'https://www.placeholder.com'
+  produtos:
+    - banner: 'images/logo-mfs.png'
+      titulo: 'Produto 1'
+      cta: 'Incentivo'
+      hotlink: 'https://produto1.example.com'
+#    - banner: 'images/logo-mfs.png'
+#      titulo: 'Produto 2'
+#      cta: 'Incentivo'
+#      hotlink: 'https://produto2.example.com'

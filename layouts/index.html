@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="Explore os melhores produtos de {{ .Site.Title }}" />
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+    <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- Header com logo e botão -->
+      <section class="logo-section">
+        <img src="{{ .Site.Params.logo | relURL }}" alt="Logo do Produto" />
+        <!--
+        <a
+          href="{{ .Site.Params.cta_link }}"
+          target="_blank"
+          class="header-link"
+          >{{ .Site.Params.button_texto }}</a
+        >
+        -->
+      </section>
+
+      <!-- Seção de Produtos -->
+      <section class="product-list">
+        {{ range .Site.Params.produtos }}
+        <a href="{{ .hotlink }}" class="product-card" target="_blank">
+          <img src="{{ .banner | relURL }}" alt="{{ .titulo }}" class="product-banner" />
+          <div class="product-info">
+            <h2 class="product-title">{{ .titulo }}</h2>
+            <h3 class="product-cta">{{ .cta }}</h3>
+          </div>
+        </a>
+        {{ end }}
+      </section>
+
+      <!-- Rodapé -->
+      <footer class="footer-section">
+        <p>&copy; 2024 <strong>meufuturo.shop</strong><br />Todos os direitos reservados.</p>
+        <p>
+          <a href="{{ "privacy" | relURL }}">Política de Privacidade</a> |
+          <a href="{{ "terms" | relURL }}">Termos de Serviço</a>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
