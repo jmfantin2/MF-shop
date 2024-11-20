@@ -19,27 +19,51 @@
   box-sizing: border-box;
 }
 
-/* Estilos Gerais */
+/*? Estilos Gerais */
 body {
   font-family: 'Rubik', Arial, sans-serif;
+  line-height: 1.6;
   background: linear-gradient(
     135deg,
     var(--background-from),
     var(--background-to)
   );
   color: var(--text-base);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Flex container */
+  flex-direction: column; /* Alinha em uma coluna (header, conteúdo, footer) */
+  justify-content: space-between; /* Distribui verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  min-height: 100vh; /* Garante que ocupe a altura total da tela */
+  margin: 0;
 }
 
-/* Contêiner Principal */
+/*? Estilos Globais para Links */
+a {
+  color: var(--accent-secondary); /* Define a cor base dos links */
+  text-decoration: none; /* Remove o sublinhado, se desejado */
+  transition: color 0.3s ease; /* Transição suave para estados */
+}
+
+a:hover {
+  color: var(--accent-color); /* Cor no estado hover */
+}
+
+/*? Contêiner Principal */
 main {
   width: 100%;
-  max-width: 900px;
-  padding: 20px;
+  max-width: 1100px;
+  flex: 1; /* Faz com que o main ocupe o espaço restante entre header e footer */
+  display: flex;
+  flex-direction: column; /* Conteúdo interno em coluna */
   margin: 0 auto;
+  padding: 20px;
+}
+
+article {
+  margin-top: 20px;
+  width: 70%;
+  text-align: justify;
+  align-self: center;
 }
 
 /* Seção de Produtos */
@@ -54,13 +78,11 @@ main {
 .product-card {
   display: flex;
   align-items: center;
-
   background: linear-gradient(
     135deg,
     var(--cta-shadow),
     var(--accent-secondary)
   );
-  background-color: var(--accent-secondary);
   border-radius: 10px;
   padding: 20px;
   text-decoration: none;
@@ -72,6 +94,11 @@ main {
 .product-card:hover {
   transform: scale(1.02);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    135deg,
+    var(--link-hover),
+    var(--accent-secondary)
+  );
 }
 
 .product-banner {
@@ -116,53 +143,47 @@ main {
   }
 }
 
-/* Logo com Link à Direita */
-.logo-section {
+header {
+  width: 100%;
+  background: linear-gradient(135deg, var(--cta-shadow), var(--background-to));
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--cta-shadow);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
 }
 
-.logo-section img {
+header img {
   max-width: 100px;
+  align-self: center;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  color: var(--text-base);
+  padding: 20px;
+  font-size: 0.9rem;
+  background-color: var(--background-to);
+  border-top: 1px solid var(--cta-shadow);
+  margin-top: 30px;
+  border-radius: 0 0 10px 10px;
 }
 
 .header-link {
-  color: var(--link-color);
+  color: var(--accent-color);
   background-color: transparent;
   padding: 10px 20px;
   text-decoration: none;
-  border: 1px solid var(--link-color);
+  border: 1px solid var(--accent-color);
   border-radius: 5px;
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s;
 }
 
 .header-link:hover {
-  background-color: var(--link-color);
+  background-color: var(--accent-secondary);
   color: var(--text-base);
   box-shadow: 0px 4px 8px var(--cta-shadow);
-}
-
-/* Rodapé */
-.footer-section {
-  text-align: center;
-  color: var(--text-base);
-  padding: 20px;
-  font-size: 0.9rem;
-  background-color: var(--background-to);
-  border-top: 1px solid var(--accent-secondary);
-  margin-top: 30px;
-  border-radius: 0 0 10px 10px;
-}
-
-.footer-section a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: var(--link-hover);
 }

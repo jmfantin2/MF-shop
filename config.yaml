@@ -10,9 +10,13 @@ sitemap:
   changefreq: 'weekly'
   priority: 0.8
 
+permalinks:
+  privacy: '/privacy/'
+  terms: '/terms/'
+
 params:
   logo: 'images/logo-mfs.png'
-  button_texto: 'Placeholder'
+  button_texto: 'Newsletter'
   cta_link: 'https://www.placeholder.com'
   produtos:
     - banner: 'images/logo-mfs.png'
