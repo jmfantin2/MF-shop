@@ -1,17 +1,27 @@
 {{ define "main" }}
-<section class="product-list">
-  {{ range .Site.Params.produtos }}
-  <a href="{{ .hotlink }}" class="product-card" target="_blank">
-    <img
-      src="{{ .banner | relURL }}"
-      alt="{{ .titulo }}"
-      class="product-banner"
-    />
-    <div class="product-info">
-      <h2 class="product-title">{{ .titulo }}</h2>
-      <h3 class="product-cta">{{ .cta }}</h3>
-    </div>
-  </a>
-  {{ end }}
+<section class="about-section">
+  <article>
+    <p>
+      No <strong>meufuturo.shop</strong>, fazemos a curadoria dos melhores
+      cursos e infoprodutos disponíveis na internet brasileira. Nosso objetivo é
+      conectar você com conteúdos de alta qualidade que promovem aprendizado,
+      transformação e crescimento pessoal.
+    </p>
+  </article>
+
+  <section class="content-list">
+    <h2>Conteúdos Ativos</h2>
+    <ul>
+      <li>
+        <a
+          href="https://decodificando-apocalipse.meufuturo.shop"
+          target="_blank"
+        >
+          Curso Decodificando o Apocalipse
+        </a>
+        - por Padre Fábio Marinho
+      </li>
+    </ul>
+  </section>
 </section>
 {{ end }}

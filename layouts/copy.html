@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="product-list">
+  {{ range .Site.Params.produtos }}
+  <a href="{{ .hotlink }}" class="product-card" target="_blank">
+    <img
+      src="{{ .banner | relURL }}"
+      alt="{{ .titulo }}"
+      class="product-banner"
+    />
+    <div class="product-info">
+      <h2 class="product-title">{{ .titulo }}</h2>
+      <h3 class="product-cta">{{ .cta }}</h3>
+    </div>
+  </a>
+  {{ end }}
+</section>
+{{ end }}
